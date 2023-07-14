@@ -24,15 +24,17 @@
         </p>
         <h2>Sign up for out upcoming Launch!</h2>
         <div class="form">
-            <form>
+            <form method="post" action="{% url 'form_submission'%}">
+                {% csrf_token %}
+
                 <h5>First Name: </h5>
-                <input type="text" maxlength="40vh">
+                <input type="text" name="first_name" maxlength="40vh">
     
                 <h5>Last Name: </h5>
-                <input type="text" maxlength="40vh">
+                <input type="text" name="last_name" maxlength="40vh">
     
                 <h5>Email: </h5>
-                <input type="email">
+                <input name="email" type="email">
                 <br>
                 <input type="submit" value="Sign me up!">
             </form>
